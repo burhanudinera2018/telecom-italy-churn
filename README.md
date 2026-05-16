@@ -18,7 +18,7 @@ This project performs **end-to-end data science analysis** on telecom network tr
 1. **Parse & clean** 2.5 GB of sparse telecom log data
 2. **Identify spatial patterns** via KMeans clustering (5 clusters)
 3. **Analyze temporal patterns** (peak/off-peak hours)
-4. **Build predictive model** (Gradient Boosting, R²=0.802)
+4. **Build predictive model** (Gradient Boosting, R² = 0.802)
 5. **Create interactive dashboard** with Streamlit
 
 ---
@@ -27,16 +27,18 @@ This project performs **end-to-end data science analysis** on telecom network tr
 
 | Category | Tools |
 |----------|-------|
-| **Data Processing** | Python, Pandas, NumPy |
-| **Clustering** | Scikit-learn (KMeans) |
-| **Time Series** | Matplotlib, Seaborn |
-| **Machine Learning** | Random Forest, Gradient Boosting |
-| **Dashboard** | Streamlit, Plotly |
-| **Environment** | Conda, Git |
+| Data Processing | Python, Pandas, NumPy |
+| Clustering | Scikit-learn (KMeans) |
+| Time Series | Matplotlib, Seaborn |
+| Machine Learning | Random Forest, Gradient Boosting |
+| Dashboard | Streamlit, Plotly |
+| Environment | Conda, Git |
 
 ---
 
 ## 📁 Repository Structure
+
+```text
 telecom-italy-churn/
 │
 ├── .gitignore
@@ -45,45 +47,44 @@ telecom-italy-churn/
 ├── requirements.txt
 │
 ├── dashboard/
-│ └── streamlit_cluster_dashboard.py
+│   └── streamlit_cluster_dashboard.py
 │
 ├── scripts/
-│ ├── parse_full_dataset.py
-│ ├── aggregate_full_data.py
-│ ├── correlation_analysis_full.py
-│ ├── clustering_analysis_full.py
-│ ├── time_series_analysis.py
-│ └── traffic_prediction_full.py
+│   ├── parse_full_dataset.py
+│   ├── aggregate_full_data.py
+│   ├── correlation_analysis_full.py
+│   ├── clustering_analysis_full.py
+│   ├── time_series_analysis.py
+│   └── traffic_prediction_full.py
 │
 ├── models/
-│ ├── traffic_prediction_model.pkl
-│ └── model_features.pkl
+│   ├── traffic_prediction_model.pkl
+│   └── model_features.pkl
 │
 ├── data/
-│ ├── hourly_aggregated_full.csv
-│ ├── square_aggregated_full.csv
-│ ├── service_aggregated_full.csv
-│ └── square_hour_aggregated_full.csv
+│   ├── hourly_aggregated_full.csv
+│   ├── square_aggregated_full.csv
+│   ├── service_aggregated_full.csv
+│   └── square_hour_aggregated_full.csv
 │
 └── outputs/
-├── clustering_full.png
-├── time_series_analysis.png
-├── prediction_results.png
-└── ...
-
+    ├── clustering_full.png
+    ├── time_series_analysis.png
+    ├── prediction_results.png
+    └── correlation_analysis_full.png
 
 ---
-
+```
 ## 🚀 How to Run Locally
 
-### Prerequisites
+Prerequisites
+Python 3.9+
 
-- Python 3.9+
-- Conda (recommended) or venv
-- Git
+Conda (recommended) or venv
 
-### Setup Instructions
+Git
 
+## Setup Instructions
 ```bash
 # 1. Clone repository
 git clone https://github.com/burhanudinera2018/telecom-italy-churn.git
@@ -99,7 +100,23 @@ pip install -r requirements.txt
 # 4. Run Streamlit dashboard
 streamlit run dashboard/streamlit_cluster_dashboard.py
 
-📊 Key Results
+```
+
+## Run Analysis Scripts (Optional)
+
+```bash
+# Re-run clustering analysis
+python scripts/clustering_analysis_full.py
+
+# Re-run time series analysis
+python scripts/time_series_analysis.py
+
+# Re-run ML model training
+python scripts/traffic_prediction_full.py
+```
+---
+
+## 📊 Key Results
 1. Spatial Clustering (5 Clusters)
 Cluster	Proportion	Characteristic	Interpretation
 0	18.4%	Medium activity, high variance	Mixed-use areas
@@ -109,9 +126,9 @@ Cluster	Proportion	Characteristic	Interpretation
 4	0.0%	No data	Unmonitored
 2. Time Series Patterns
 Metric	Global Value
-Peak Hour	10:00 (value=2.256)
-Off-Peak Hour	04:00 (value=0.380)
-Note: City Center (Cluster 2) shows different behavior: peak at 16:00 (value=8.515)
+Peak Hour	10:00 (value = 2.256)
+Off-Peak Hour	04:00 (value = 0.380)
+Note: City Center (Cluster 2) shows different behavior: peak at 16:00 (value = 8.515)
 
 3. Machine Learning Model
 Model	RMSE	R²	MAE
@@ -119,41 +136,48 @@ Random Forest	0.7950	0.8016	0.4839
 Gradient Boosting	0.7942	0.8020	0.4866
 Feature Importance:
 
-cluster → 71.0% (dominant predictor)
+Feature	Importance
+cluster	71.0%
+hour	27.5%
+avg_values_count	1.5%
+> 💡 Key Insight: Location (cluster) is 2.6× more important than time of day in predicting network traffic.
 
-hour → 27.5%
+---
 
-avg_values_count → 1.5%
 
-💡 Key Insight: Location (cluster) is 2.6× more important than time of day in predicting network traffic.
-
-📸 Sample Visualizations
+## 📸 Sample Visualizations
 Clustering Results	Time Series	Model Performance
 https://outputs/clustering_full.png	https://outputs/time_series_analysis.png	https://outputs/prediction_results.png
-📌 Disclaimer
+
+---
+
+## 📌 Disclaimer
 Data Source Acknowledgment:
 This project uses data from Harvard Dataverse (DOI: 10.7910/DVN/EGZHFV) – Telecom Italia mobile network logs (Milan, November 2013).
 
-Purpose of Use:
+## Purpose of Use:
 This project is for educational and portfolio purposes only – non-commercial, demonstrating end-to-end data science skills.
 
-No Affiliation:
+## No Affiliation:
 The analyses, models, and visualizations are my own and do not represent Harvard University or Telecom Italia.
 
-Data Privacy:
+## Data Privacy:
 The dataset has been anonymized and contains no PII.
 
-📄 License
+---
+## 📄 License
 This project is licensed under the MIT License – see the LICENSE file for details.
 
-🙏 Acknowledgments
+---
+## 🙏 Acknowledgments
 Harvard Dataverse for providing open access to the Telecom Milan dataset
 
 Telecom Italia for the original data collection (anonymized)
 
 Open-source community: Python, Pandas, Scikit-learn, Streamlit
 
-📬 Contact
+---
+## 📬 Contact
 Burhanudin Badiuzaman
 
 Portfolio: burhanudinera2018.github.io
@@ -162,7 +186,9 @@ LinkedIn: linkedin.com/in/burhanudin-badiuzaman
 
 Email: burhanudinera2018@gmail.com
 
-⭐ Show Your Support
+---
+
+## ⭐ Show Your Support
 If you find this project useful, please give it a ⭐ on GitHub!
 
-**Built with ❤️ as part of my Data Science learning journey**
+Built with ❤️ as part of my Data Science learning journey
