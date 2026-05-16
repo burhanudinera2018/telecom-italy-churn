@@ -180,7 +180,7 @@ Open-source community: Python, Pandas, Scikit-learn, Streamlit
 ## 📬 Contact
 Burhanudin Badiuzaman
 
-Portfolio: burhanudinera2018.github.io
+Portfolio: https://burhanudinera2018.github.io/portfolio/
 
 LinkedIn: https://www.linkedin.com/in/burhanudin-badiuzaman4a9204161/
 
