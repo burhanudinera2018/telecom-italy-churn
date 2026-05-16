@@ -1,0 +1,24 @@
+# Large data files (raw)
+*.txt
+data/telecom-italia-sample/
+telecom_full_dataset*.csv
+*.csv
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment
+venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Alternative (hapus jika ingin tetap simpan di data/)
+# data/*_aggregated.csv (tanpa _full)
