@@ -182,7 +182,7 @@ Burhanudin Badiuzaman
 
 Portfolio: burhanudinera2018.github.io
 
-LinkedIn: linkedin.com/in/burhanudin-badiuzaman
+LinkedIn: https://www.linkedin.com/in/burhanudin-badiuzaman4a9204161/
 
 Email: burhanudinera2018@gmail.com
 
